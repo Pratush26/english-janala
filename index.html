@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="bg-slate-300 shadow-xs shadow-gray-500 px-4 py-2">
+        <nav class="w-11/12 mx-auto flex items-center justify-between">
+            <a href="./index.html" class="flex items-center justify-center gap-2">
+                <strong>English</strong>
+                <img src="./assets/logo.png" alt="logo">
+                <span class="text-sm">জানালা</span>
+            </a>
+            <div class="text-indigo-600 text-xs font-semibold space-x-2">
+                <button class="px-2 py-1 border-1 rounded"><i class="fa-solid fa-circle-question"></i> FAQ</button>
+                <button class="px-2 py-1 border-1 rounded"><i class="fa-etch fa-solid fa-book-open"></i> Learn</button>
+                <button class="px-2 py-1 border-1 rounded"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    LogOut</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="min-h-screen grid grid-cols-2 place-content-center w-5/6 mx-auto">
+            <div class="flex flex-col justify-center gap-4">
+                <h1 class="text-4xl font-bold"><span class="text-sky-500">English</span> is Easy!!</h1>
+                <p class="text-sm font-bold text-gray-600">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+                    অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <form action="" class="flex flex-col gap-4 w-fit text-sm my-4">
+                    <input class="outline-1 outline-gray-400 rounded px-4 py-2" type="text" name="name"
+                        placeholder="Enter Your Name">
+                    <input class="outline-1 outline-gray-400 rounded px-4 py-2" type="password" name="password"
+                        placeholder="Enter Your Password">
+                    <button type="submit" class="w-fit rounded bg-indigo-600 text-white font-semibold px-4 py-2">Get
+                        Started</button>
+                </form>
+            </div>
+            <img src="./assets/hero-student.png" alt="student" class="h-full object-contain">
+        </section>
+        <section id="lessons" class="w-11/12 mx-auto flex flex-col items-center justify-center">
+            <h2 class="text-3xl font-bold"><span class="text-sky-500">Let's</span> Learn Vocabularies</h2>
+            <div id="navigation-bar">
+                <button
+                    class="px-4 py-2 text-indigo-600 flex items-center justify-center gap-2 text-xs font-bold border-1 rounded"><img
+                        src="./assets/Symbol.svg" alt="lessons Symbol"> Lesson - 1</button>
+
+            </div>
+            <div id="container">
+
+            </div>
+        </section>
+        <section id="faq" class="w-11/12 mx-auto flex flex-col items-center justify-center">
+            <h2 class="text-3xl font-bold"><span class="text-sky-500">Frequently</span> Asked Questions</h2>
+        </section>
+    </main>
+    <footer class="bg-slate-300">
+        <section class="w-11/12 mx-auto flex items-center justify-between min-h-[30vh]">
+            <div>
+                <a href="./index.html" class="flex items-center justify-center gap-2">
+                    <strong>English</strong>
+                    <img src="./assets/logo.png" alt="logo">
+                    <span class="text-sm">জানালা</span>
+                </a>
+                <p>ইংরেজি শিখুন সহজে</p>
+                <small>Providing ED-Tech Applications since 2025</small>
+            </div>
+            <div>
+                <p>FOLLOW US</p>
+                <span>
+                    <a href="./index.html"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="./index.html"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="./index.html"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="./index.html"><i class="fa-brands fa-github"></i></a>
+                </span>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>
