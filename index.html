@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <title>English Janala</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -17,12 +20,15 @@
             <a href="./index.html" class="flex items-center justify-center gap-2">
                 <strong>English</strong>
                 <img src="./assets/logo.png" alt="logo">
-                <span class="text-sm">জানালা</span>
+                <span class="text-sm font-semibold bangla">জানালা</span>
             </a>
-            <div class="text-indigo-600 text-xs font-semibold space-x-2">
-                <button class="px-2 py-1 border-1 rounded"><i class="fa-solid fa-circle-question"></i> FAQ</button>
-                <button class="px-2 py-1 border-1 rounded"><i class="fa-etch fa-solid fa-book-open"></i> Learn</button>
-                <button class="px-2 py-1 border-1 rounded"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <div class="text-indigo-600 space-x-2">
+                <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
+                        class="fa-solid fa-circle-question"></i> FAQ</button>
+                <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
+                        class="fa-etch fa-solid fa-book-open"></i> Learn</button>
+                <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i>
                     LogOut</button>
             </div>
         </nav>
@@ -31,33 +37,56 @@
         <section class="min-h-screen grid grid-cols-2 place-content-center w-5/6 mx-auto">
             <div class="flex flex-col justify-center gap-4">
                 <h1 class="text-4xl font-bold"><span class="text-sky-500">English</span> is Easy!!</h1>
-                <p class="text-sm font-bold text-gray-600">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+                <p class="bangla font-bold text-gray-600">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
                     অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-                <form action="" class="flex flex-col gap-4 w-fit text-sm my-4">
-                    <input class="outline-1 outline-gray-400 rounded px-4 py-2" type="text" name="name"
-                        placeholder="Enter Your Name">
-                    <input class="outline-1 outline-gray-400 rounded px-4 py-2" type="password" name="password"
-                        placeholder="Enter Your Password">
-                    <button type="submit" class="w-fit rounded bg-indigo-600 text-white font-semibold px-4 py-2">Get
+                <form action="" class="flex flex-col gap-4 text-sm my-4">
+                    <input class="input" type="text" name="name" placeholder="Enter Your Name">
+                    <input class="input" type="password" name="password" placeholder="Enter Your Password">
+                    <button type="submit" class="btn btn-primary w-fit">Get
                         Started</button>
                 </form>
             </div>
             <img src="./assets/hero-student.png" alt="student" class="h-full object-contain">
         </section>
-        <section id="lessons" class="w-11/12 mx-auto flex flex-col items-center justify-center">
-            <h2 class="text-3xl font-bold"><span class="text-sky-500">Let's</span> Learn Vocabularies</h2>
-            <div id="navigation-bar">
-                <button
-                    class="px-4 py-2 text-indigo-600 flex items-center justify-center gap-2 text-xs font-bold border-1 rounded"><img
-                        src="./assets/Symbol.svg" alt="lessons Symbol"> Lesson - 1</button>
-
-            </div>
+        <section id="lessons" class="w-11/12 mx-auto">
+            <h2 class="text-3xl font-bold text-center"><span class="text-sky-500">Let's</span> Learn Vocabularies</h2>
+            <div id="lesson-bar" class="flex flex-wrap items-center justify-center gap-2"></div>
             <div id="container">
 
             </div>
         </section>
-        <section id="faq" class="w-11/12 mx-auto flex flex-col items-center justify-center">
-            <h2 class="text-3xl font-bold"><span class="text-sky-500">Frequently</span> Asked Questions</h2>
+        <section id="faq" class="w-11/12 mx-auto space-y-2 my-6">
+            <h2 class="text-3xl font-bold my-6 text-center"><span class="text-sky-500">Frequently</span> Asked Questions</h2>
+            <div tabindex="0" class="collapse collapse-plus bg-base-100 border-base-300 border bg-gray-100">
+                <div class="collapse-title font-semibold">1 . How can I start learning English on this website?</div>
+                <div class="collapse-content text-sm">
+                    You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+                </div>
+            </div>
+            <div tabindex="0" class="collapse collapse-plus bg-base-100 border-base-300 border bg-gray-100">
+                <div class="collapse-title font-semibold">2 . Is this website free to use?</div>
+                <div class="collapse-content text-sm">
+                    You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+                </div>
+            </div>
+            <div tabindex="0" class="collapse collapse-plus bg-base-100 border-base-300 border bg-gray-100">
+                <div class="collapse-title font-semibold">3 . Do I need to create an account?</div>
+                <div class="collapse-content text-sm">
+                    You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+                </div>
+            </div>
+            <div tabindex="0" class="collapse collapse-plus bg-base-100 border-base-300 border bg-gray-100">
+                <div class="collapse-title font-semibold">4 . How can I build my English vocabulary?</div>
+                <div class="collapse-content text-sm">
+                    You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+                </div>
+            </div>
+            <div tabindex="0" class="collapse collapse-plus bg-base-100 border-base-300 border bg-gray-100">
+                <div class="collapse-title font-semibold">5 . Do you offer certificates for completed courses?</div>
+                <div class="collapse-content text-sm">
+                    You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+                </div>
+            </div>
         </section>
     </main>
     <footer class="bg-slate-300">
@@ -82,6 +111,7 @@
             </div>
         </section>
     </footer>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
