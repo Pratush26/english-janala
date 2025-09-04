@@ -2,7 +2,13 @@
 let lessonBar = document.getElementById("lesson-bar");
 let container = document.getElementById("container");
 
-//  {word: 'Fascinate', meaning: 'মুগ্ধ করা', pronunciation: 'ফ্যাসিনেট', level: 5, sentence: "The magician's tricks fascinate the audience.", …}
+//  pronunciation function
+let pronounceWord = (word) => {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 //  word info button's functionality
 let wordDetails = async (id) => {
   let details = await (await fetch(`https://openapi.programming-hero.com/api/word/${id}`)).json();
@@ -43,7 +49,7 @@ let level = (l) => {
                     <h6 class="text-lg bangla font-semibold">Meaning - ${e.meaning ? e.meaning : "শব্দার্থ পাওয়া যায়নি"}</h6>
                     <div class="flex items-center justify-between w-full">
                         <button class="btn" onclick="wordDetails(${e.id})"><i class="fa-solid fa-circle-info"></i></button>
-                        <button class="btn" onclick="wordDetails(${e.id})"><i class="fa-solid fa-volume-high"></i></button>
+                        <button class="btn" onclick="pronounceWord('${e.word}')"><i class="fa-solid fa-volume-high"></i></button>
                     </div>`;
           container.appendChild(box);
         });
@@ -51,6 +57,38 @@ let level = (l) => {
     });
 }
 
+//  Search-bar functionality
+let filter = async (f) => {
+  let words = await (await fetch("https://openapi.programming-hero.com/api/words/all")).json();
+  let filteredWords = words.data.filter(w => w.word.includes(f))
+  console.log(filteredWords)
+  container.innerHTML = "";
+      if (filteredWords.length == 0) {
+        let box = document.createElement("span");
+        box.className = "flex flex-col gap-3 items-center justify-center bangla col-span-3 p-6 rounded-lg";
+        box.innerHTML = `<img src="./assets/alert-error.png" alt="alert sign">
+                        <p class="font-semibold text-lg bangla text-gray-800">Vocabulary খুঁজে পাওয়া যায়নি</p>`
+        container.append(box);
+      } else {
+        filteredWords.map(e => {
+          let box = document.createElement("span");
+          box.className = "flex flex-col gap-3 items-center justify-center text-center bg-white p-6 rounded-lg";
+          box.innerHTML = `<h5 class="text-2xl font-bold">${e.word ? e.word : "word not found"}</h5>
+                    <p class="text-sm bangla">Pronounciation - ${e.pronunciation ? e.pronunciation : "উচ্চারণ পাওয়া যায়নি"}</p>
+                    <h6 class="text-lg bangla font-semibold">Meaning - ${e.meaning ? e.meaning : "শব্দার্থ পাওয়া যায়নি"}</h6>
+                    <div class="flex items-center justify-between w-full">
+                        <button class="btn" onclick="wordDetails(${e.id})"><i class="fa-solid fa-circle-info"></i></button>
+                        <button class="btn" onclick="pronounceWord('${e.word}')"><i class="fa-solid fa-volume-high"></i></button>
+                    </div>`;
+          container.appendChild(box);
+        });
+      }
+}
+document.getElementById("searchBar").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const value = e.target.search.value; // by name attribute
+  filter(value);
+});
 
 //  Show all levels in the UI with active buttons
 fetch("https://openapi.programming-hero.com/api/levels/all")

@@ -16,17 +16,17 @@
 
 <body>
     <header class="bg-slate-200 shadow-xs shadow-gray-500 px-4 py-2">
-        <nav class="w-11/12 mx-auto flex items-center justify-between">
+        <nav class="w-11/12 mx-auto flex flex-col sm:flex-row gap-2 items-center justify-between">
             <a href="./index.html" class="flex items-center justify-center gap-2">
                 <strong>English</strong>
                 <img src="./assets/logo.png" alt="logo">
                 <span class="text-sm font-semibold bangla">জানালা</span>
             </a>
             <div class="text-indigo-600 space-x-2">
-                <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
-                        class="fa-solid fa-circle-question"></i> FAQ</button>
-                <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
-                        class="fa-etch fa-solid fa-book-open"></i> Learn</button>
+                <a href="#faq" class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
+                        class="fa-solid fa-circle-question"></i> FAQ</a>
+                <a href="#lessons" class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
+                        class="fa-etch fa-solid fa-book-open"></i> Learn</a>
                 <button class="btn btn-outline btn-primary text-xs p-2 h-fit"><i
                         class="fa-solid fa-arrow-right-from-bracket"></i>
                     LogOut</button>
@@ -34,8 +34,8 @@
         </nav>
     </header>
     <main>
-        <section class="min-h-screen grid grid-cols-2 place-content-center w-5/6 mx-auto">
-            <div class="flex flex-col justify-center gap-4">
+        <section class="min-h-screen grid grid-cols-1 lg:grid-cols-2 place-content-center gap-4 w-5/6 my-8 mx-auto">
+            <div class="flex flex-col justify-center gap-4 order-2 lg:order-1">
                 <h1 class="text-4xl font-bold"><span class="text-sky-500">English</span> is Easy!!</h1>
                 <p class="bangla font-bold text-gray-600">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
                     অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
@@ -46,12 +46,17 @@
                         Started</button>
                 </form>
             </div>
-            <img src="./assets/hero-student.png" alt="student" class="h-full object-contain">
+            <img src="./assets/hero-student.png" alt="student" class="h-full object-contain order-1 lg:order-2">
         </section>
-        <section id="lessons" class="w-11/12 mx-auto">
+        <section id="lessons" class="w-11/12 mx-auto space-y-8">
             <h2 class="text-3xl font-bold text-center"><span class="text-sky-500">Let's</span> Learn Vocabularies</h2>
+            <form id="searchBar" action="" class="flex items-center justify-center">
+                <input class="input" type="text" name="search" placeholder="Search Word">
+                <button type="submit" class="btn btn-primary w-fit">Search</button>
+            </form>
             <div id="lesson-bar" class="flex flex-wrap items-center justify-center gap-2"></div>
-            <div id="container" class="grid grid-cols-3 gap-4 place-content-center bg-gray-200 p-4 my-5">
+            <div id="container"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-content-center bg-gray-200 p-4 my-5">
                 <span class="flex flex-col gap-3 items-center justify-center bangla col-span-3 p-6 rounded-lg">
                     <small class="text-gray-500 text-xs font-semibold">আপনি এখনো কোন Lesson Select করেন নি</small>
                     <p class="font-semibold text-lg text-gray-800">একটি Lesson Select করুন।</p>
@@ -139,7 +144,7 @@
             </div>
         </section>
     </footer>
-    <script src="./scripts/index.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
